@@ -1,0 +1,17 @@
+.sorting {
+    background-color: #45619d!important;
+    color: #ffffff!important;
+}
+
+.sorting_disabled {
+    background-color: #45619d!important;
+    color: #ffffff!important;
+}
+
+.odd td {
+    padding-right: 30px;
+}
+
+.importclass {
+    padding-top: 40px;
+}
