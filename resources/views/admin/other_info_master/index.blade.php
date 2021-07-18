@@ -115,13 +115,19 @@
                     <div class="col-md-3  float-left d-none">
                         <div class="form-group">
                             <label class="control-label">Cast Name</label>
-                            <input type="text" class="form-control" id="cast_name" name="cast_name" >
+                            <input type="text" class="form-control cast_name" id="cast_name" name="cast_name" value="{{ old('cast_name') }}">
                         </div>
                     </div>
                     <div class="col-md-3  float-left d-none">
                         <div class="form-group">
                             <label class="control-label">Cast Image</label>
                             <input type="file" class="form-control" id="cast_image" name="cast_image" data-allowed-file-extensions="png jpg jpeg PNG JPG JPEG">
+                        </div>
+                    </div>
+                    <div class="col-md-3  float-left d-none">
+                        <div class="form-group">
+                            <label class="control-label">About</label>
+                            <input type="text" class="form-control cast_name" id="name" name="name" value="{{ old('name') }}" >
                         </div>
                     </div>
                     <div class="col-md-3  float-left d-none">
