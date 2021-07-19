@@ -54,6 +54,9 @@ Route::get('clear', function() {
 
  });
 
+ use App\Http\Controllers\OIMNewController;
+ Route::post('/other_info', [OIMNewController::class, 'other_info']);
+
 
 // Route::get('/', [AuthController::class, 'showLoginForm']);
 

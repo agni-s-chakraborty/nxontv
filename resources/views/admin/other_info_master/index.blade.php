@@ -295,6 +295,7 @@
         </div>
         <div class="row mt-5 ">
             <div class="col-12">
+           
                 <div class="form-row">
                     <div class="form-group col-md-3">
                         <label>Category</label>
@@ -307,6 +308,7 @@
                         </select>
                     </div>
                 </div>
+               
                 <div class="card view-head">
                     <div class="card-header">
                         <h4></h4>
@@ -331,11 +333,11 @@
                                     <th class='align-middle' style='font-size: 14px;'>Action</th>
                                 </tr>
                                 </thead>
-                                <div id="tbody_show">
-                                    <tbody>
+                               
+                                    <tbody id="tbody_show">
 
                                     </tbody>
-                                </div>
+                                
                             </table>
                         </div>
                     </div>
@@ -384,26 +386,10 @@
     
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script>
-        $(document).ready(function(){
-          $("#frm").submit(function(e){
-            var frm_data = $('#frm').serialize();
-            e.preventDefault();
-            $.ajax({
-                    url:"{{ url('form_submit') }}",
-                    data: frm_data,
-                    type:'post',
-                    success: function(result){
-                        $("#msg").html(result.msg);
-                        
-                    }
-            });
-    
-          });
-        });
-        </script>
+   
 
 <script>
+   //var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
     $(document).ready(function(){
             $("#category_type_show").on('change', function () {
             var type_drop = $(this).val();
@@ -427,6 +413,21 @@
                 default:
                     alert('Select a category!');;
             }
+
+
+            $.ajax({
+                    url:"{{ url('other_info') }}",
+                    data: {type_drop: type_drop},
+                    data: {abc: "abc"}
+                    data: {
+                        "_token": "{{ csrf_token() }}"
+                    },
+                    type:'post',
+                    success: function(result){
+                        $("#tbody_show").html(result.msg+type_drop);
+                        
+                    }
+            });
             
         });
     });

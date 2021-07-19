@@ -83,12 +83,15 @@
                         <table class="table table-striped table-bordered table-head-sec" id="kt_table_1">
                             <thead>
                             <tr>
+                                <th class="align-middle">ID</th>
+                                <th class="align-middle">Operator</th>
                                 <th class="align-middle">Channel Name</th>
                                 <th class="align-middle">HD/SD</th>
                                 <th class="align-middle">LCN</th>
                                 <th class="align-middle">Action</th>
                             </tr>
                             </thead>
+
                         </table>
                     </div>
                 </div>
@@ -159,7 +162,9 @@
                     }
                 },
                 columns: [
-                    {name: 'chennal_name', "defaultContent": "-"},
+                    {data: 'id', name: 'id', "defaultContent": "-"},
+                    {data: 'operator_name', name: 'operator_name', "defaultContent": "-"},
+                    {data: 'chennal_name', name: 'chennal_name', "defaultContent": "-"},
                     {data: 'hd_sd', name: 'hd_sd', "defaultContent": "-"},
                     {data: 'lcn', name: 'lcn', "defaultContent": "-"},
                     {data: 'action', name: 'action', searchable: false, sortable: false, responsivePriority: -1},

@@ -16,42 +16,55 @@
         <div class="row">
 
           <div class="form-group col-md-3">
-            <label>Select Category</label>
+            <label>Select Module</label>
             <select class="form-control">
-              <option>Choose Category</option>
+              <option>Choose Module</option>
               <option>Show</option>
               <option>Movie</option>
               <option>Reality</option>
             </select>
           </div>
           <div class="form-group col-md-3">
-            <label>Show Name</label>
+            <label>Select Channel</label>
+            <select class="form-control">
+              <option>Choose Channel</option>
+              <option>Show</option>
+              <option>Movie</option>
+              <option>Reality</option>
+            </select>
+          </div>
+          <div class="form-group col-md-3">
+            <label>Select Program</label>
+            <select class="form-control">
+              <option>Choose Program</option>
+              <option>Show</option>
+              <option>Movie</option>
+              <option>Reality</option>
+            </select>
+          </div>
+          <div class="form-group col-md-3">
+            <label>Program Short Title </label>
             <input type="text" class="form-control">
           </div>
           <div class="form-group col-md-3">
-            <label>Display Name</label>
-            <input type="text" class="form-control">
+            <label>Program Genre</label>
+            <select class="form-control">
+              <option>Choose Program Genre</option>
+              <option>Show</option>
+              <option>Movie</option>
+              <option>Reality</option>
+            </select>
           </div>
           <div class="form-group col-md-3">
-            <label>Show Genre</label>
-            <input type="text" class="form-control">
+            <label>Program Sub Genre</label>
+            <select class="form-control">
+              <option>Choose Program Sub Genre</option>
+              <option>Show</option>
+              <option>Movie</option>
+              <option>Reality</option>
+            </select>
           </div>
-          <div class="form-group col-md-3">
-            <label>Show Sub Genre</label>
-            <input type="text" class="form-control">
-          </div>
-          <div class="form-group col-md-3">
-            <label>Show Short Description</label>
-            <input type="text" class="form-control">
-          </div>
-          <div class="form-group col-md-3">
-            <label>Show Long Description</label>
-            <input type="text" class="form-control">
-          </div>
-          <div class="form-group col-md-3">
-            <label>Season no</label>
-            <input type="text" class="form-control">
-          </div>
+         
         </div>
 
 
@@ -62,30 +75,55 @@
       </div>
       <div class="form-group col-md-3">
         <div class="form-group">
-          <label>EP No</label>
+          <label>Episode Title</label>
           <input type="text" class="form-control">
         </div>
       </div>
       <div class="form-group col-md-3">
         <div class="form-group">
-          <label>EP Title</label>
+          <label>Episodic Synopsis</label>
           <input type="text" class="form-control">
         </div>
       </div>
       <div class="form-group col-md-3">
         <div class="form-group">
-          <label>EP Description</label>
+          <label>Generic Synopsis</label>
           <input type="text" class="form-control">
         </div>
       </div>
 
+      <div class="form-group col-md-3">
+        <div class="form-group">
+          <label>Season Number</label>
+          <input type="number" class="form-control">
+        </div>
+      </div>
+
+      <div class="form-group ott-btn col-md-3">
+        <div class="custom-file">
+          <input type="file" class="custom-file-input" id="customFile">
+          <label class="custom-file-label" for="customFile">Choose Landscape Image</label>
+        </div>
+        <a class="btn btn-primary btn-action mr-1" data-toggle="tooltip" title="Add"><i class="fas fa-plus"></i></a>
+    </div>
+  </div>
+
+      <div class="form-group ott-btn col-md-3">
+        <div class="custom-file">
+          <input type="file" class="custom-file-input" id="customFile">
+          <label class="custom-file-label" for="customFile">Choose Potrait Image</label>
+        </div>
+        <a class="btn btn-primary btn-action mr-1" data-toggle="tooltip" title="Add"><i class="fas fa-plus"></i></a>
+    </div>
+    </div>
+<hr>
     </div>
     <div class="row">
       <div class="col-3 col-md-3 col-lg-3 ott-sec">
         <h1>Star Cast</h1>
         <hr>
         <div class="form-group">
-          <label>Name</label>
+          <label>Starcast Name</label>
           <input type="text" class="form-control">
         </div>
         <div class="form-group ott-btn">
