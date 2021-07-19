@@ -300,10 +300,10 @@
                         <label>Category</label>
                         <select class="form-control" id="category_type_show" name="category_type_show">
                             <option selected="true" disabled="disabled">Choose Category</option>
-                            <option value="cast" >StarCast</option>
-                            <option value="director" >Director</option>
-                            <option value="writer" >Writer</option>
-                            <option value="producter" >Producer</option>
+                            <option value="star_casts" >StarCast</option>
+                            <option value="directors" >Director</option>
+                            <option value="writers" >Writer</option>
+                            <option value="producers" >Producer</option>
                         </select>
                     </div>
                 </div>
@@ -319,18 +319,23 @@
                         <br />
                         <div class="table-responsive">
                             <table class="table table-striped table-bordered table-head-sec" id="kt_table_1">
-                                <thead>
+                                <thead id="thead_show">
                                 <tr>
-                                    <th style="font-size: 14px;">Sl. no</th>
-                                    <th class="align-middle" style="font-size: 14px;">Category</th>
-                                    <th class="align-middle" style="font-size: 14px;">Name</th>
-                                    <th class="align-middle" style="font-size: 14px;">Image</th>
-                                    <th class="align-middle" style="font-size: 14px;">About</th>
-                                    <th class="align-middle" style="font-size: 14px;">Best film</th>
-                                    <th class="align-middle" style="font-size: 14px;">Award</th>
-                                    <th class="align-middle" style="font-size: 14px;">Action</th>
+                                    <th style='font-size: 14px;'>Sl. no</th>
+                                    <th class='align-middle' style='font-size: 14px;'>Category</th>
+                                    <th class='align-middle' style='font-size: 14px;'>Name</th>
+                                    <th class='align-middle' style='font-size: 14px;'>Image</th>
+                                    <th class='align-middle' style='font-size: 14px;'>About</th>
+                                    <th class='align-middle' style='font-size: 14px;'>Best film</th>
+                                    <th class='align-middle' style='font-size: 14px;'>Award</th>
+                                    <th class='align-middle' style='font-size: 14px;'>Action</th>
                                 </tr>
                                 </thead>
+                                <div id="tbody_show">
+                                    <tbody>
+
+                                    </tbody>
+                                </div>
                             </table>
                         </div>
                     </div>
@@ -375,6 +380,63 @@
     <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
     <script src="https://cdn.datatables.net/buttons/1.0.3/js/dataTables.buttons.min.js"></script>
     <script src="{{asset('admin/assets/js/otherInfoMaster.js')}}"></script>
+
+    
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+          $("#frm").submit(function(e){
+            var frm_data = $('#frm').serialize();
+            e.preventDefault();
+            $.ajax({
+                    url:"{{ url('form_submit') }}",
+                    data: frm_data,
+                    type:'post',
+                    success: function(result){
+                        $("#msg").html(result.msg);
+                        
+                    }
+            });
+    
+          });
+        });
+        </script>
+
+<script>
+    $(document).ready(function(){
+            $("#category_type_show").on('change', function () {
+            var type_drop = $(this).val();
+            switch (type_drop) { 
+                case 'star_casts': 
+                    $("#thead_show").html("<tr><th style='font-size: 14px;'>Sl. no</th><th class='align-middle' style='font-size: 14px;'>Category</th><th class='align-middle' style='font-size: 14px;'>StarCast Name</th><th class='align-middle' style='font-size: 14px;'>StarCast Image</th><th class='align-middle' style='font-size: 14px;'>About</th><th class='align-middle' style='font-size: 14px;'>Best film</th><th class='align-middle' style='font-size: 14px;'>Award</th><th class='align-middle' style='font-size: 14px;'>Action</th></tr>");
+                    //alert('yo');
+                    break;
+                case 'producers': 
+                    $("#thead_show").html("<tr><th style='font-size: 14px;'>Sl. no</th><th class='align-middle' style='font-size: 14px;'>Category</th><th class='align-middle' style='font-size: 14px;'>Producer Name</th><th class='align-middle' style='font-size: 14px;'>Producer Image</th><th class='align-middle' style='font-size: 14px;'>About</th><th class='align-middle' style='font-size: 14px;'>Best film</th><th class='align-middle' style='font-size: 14px;'>Award</th><th class='align-middle' style='font-size: 14px;'>Action</th></tr>");
+                    //alert('prototype Wins!');
+                    break;
+                case 'directors': 
+                     $("#thead_show").html("<tr><th style='font-size: 14px;'>Sl. no</th><th class='align-middle' style='font-size: 14px;'>Category</th><th class='align-middle' style='font-size: 14px;'>Director Name</th><th class='align-middle' style='font-size: 14px;'>Director Image</th><th class='align-middle' style='font-size: 14px;'>About</th><th class='align-middle' style='font-size: 14px;'>Best film</th><th class='align-middle' style='font-size: 14px;'>Award</th><th class='align-middle' style='font-size: 14px;'>Action</th></tr>");
+                    //alert('mootools Wins!');
+                    break;
+                case 'writers': 
+                    $("#thead_show").html("<tr><th style='font-size: 14px;'>Sl. no</th><th class='align-middle' style='font-size: 14px;'>Category</th><th class='align-middle' style='font-size: 14px;'>Writer Name</th><th class='align-middle' style='font-size: 14px;'>Writer Image</th><th class='align-middle' style='font-size: 14px;'>About</th><th class='align-middle' style='font-size: 14px;'>Best film</th><th class='align-middle' style='font-size: 14px;'>Award</th><th class='align-middle' style='font-size: 14px;'>Action</th></tr>");
+                    //alert('mootools Wins!');
+                    break;		
+                default:
+                    alert('Select a category!');;
+            }
+            
+        });
+    });
+    </script>
+
+
+
+
+
+
     <script type="text/javascript">
 
 
